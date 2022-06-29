@@ -4,19 +4,69 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "Turnos")
+
 public class Turno {
 
     @Id
-    @GeneratedValue
-    public Integer id;
+    @GeneratedValue (strategy=GenerationType.AUTO)
+    private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "paciente_id", nullable = false)
-    public Paciente paciente;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "paciente_id")
+    private Paciente paciente;
 
-    @ManyToOne
-    @JoinColumn(name = "odontologo_id", nullable = false)
-    public Odontologo odontologo;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "odontologo_id")
+    private Odontologo odontologo;
 
-    public LocalDateTime fechaHora;
+    private LocalDateTime fechaHora;
+
+    public Turno() {
+    }
+
+    public Turno(Paciente paciente, Odontologo odontologo, LocalDateTime fechaHora) {
+        this.paciente = paciente;
+        this.odontologo = odontologo;
+        this.fechaHora = fechaHora;
+    }
+
+    public Turno(Integer id, Paciente paciente, Odontologo odontologo, LocalDateTime fechaHora) {
+        this.id = id;
+        this.paciente = paciente;
+        this.odontologo = odontologo;
+        this.fechaHora = fechaHora;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public Odontologo getOdontologo() {
+        return odontologo;
+    }
+
+    public void setOdontologo(Odontologo odontologo) {
+        this.odontologo = odontologo;
+    }
+
+    public LocalDateTime getFechaHora() {
+        return fechaHora;
+    }
+
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
+    }
 }
