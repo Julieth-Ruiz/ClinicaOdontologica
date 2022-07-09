@@ -10,16 +10,16 @@ import java.util.*;
 public class Odontologo {
 
     @Id
-    @GeneratedValue (strategy=GenerationType.AUTO)
+    @GeneratedValue (strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     private String nombre;
     private String apellido;
     private Long matricula;
 
-    @OneToMany(mappedBy ="odontologo", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy ="odontologo", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIgnore
-    private Set<Turno> Turnos;
+    private Set<Turno> Turnos = new HashSet<>();
 
     public Odontologo() {
     }
@@ -31,12 +31,10 @@ public class Odontologo {
         Turnos = turnos;
     }
 
-    public Odontologo(Integer id, String nombre, String apellido, Long matricula, Set<Turno> turnos) {
-        this.id = id;
+    public Odontologo(String nombre, String apellido, Long matricula) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.matricula = matricula;
-        Turnos = turnos;
     }
 
     public Integer getId() {

@@ -1,10 +1,20 @@
 package com.proyecto.ClinicaOdontologica.dto;
 
+
 public class OdontologoDTO {
     private Integer id;
     private String nombre;
     private String apellido;
     private Long matricula;
+
+    public OdontologoDTO() {
+    }
+
+    public OdontologoDTO(String nombre, String apellido, Long matricula) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.matricula = matricula;
+    }
 
     public Integer getId() {
         return id;

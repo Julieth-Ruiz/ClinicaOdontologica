@@ -12,6 +12,9 @@ public class PacienteDTO {
     private Integer dni;
     private Date fechaAlta;
 
+    public PacienteDTO() {
+    }
+
     public Integer getId() {
         return id;
     }

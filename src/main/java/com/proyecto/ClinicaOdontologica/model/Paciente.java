@@ -12,33 +12,33 @@ import java.util.*;
 public class Paciente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     private String nombre;
     private String apellido;
 
-    @OneToOne()
+    @OneToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL )
     @JoinColumn(name = "domicilio_id", nullable = false)
     private Domicilio domicilio;
 
     private Integer dni;
     private Date fechaAlta;
 
-    @OneToMany(mappedBy ="paciente")
+    @OneToMany(mappedBy ="paciente" )
     @JsonIgnore
     private Set<Turno> Turnos;
 
     public Paciente() {
     }
 
-    public Paciente(String nombre, String apellido, Domicilio domicilio, Integer dni, Date fechaAlta, Set<Turno> turnos) {
+
+    public Paciente(String nombre, String apellido, Domicilio domicilio, Integer dni, Date fechaAlta) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.domicilio = domicilio;
         this.dni = dni;
         this.fechaAlta = fechaAlta;
-        Turnos = turnos;
     }
 
     public Paciente(Integer id, String nombre, String apellido, Domicilio domicilio, Integer dni, Date fechaAlta, Set<Turno> turnos) {

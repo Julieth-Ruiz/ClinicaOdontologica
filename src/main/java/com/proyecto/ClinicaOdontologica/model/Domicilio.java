@@ -1,6 +1,7 @@
 package com.proyecto.ClinicaOdontologica.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
 @Entity
@@ -8,29 +9,29 @@ import javax.persistence.*;
 public class Domicilio {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     private String calle;
-    private String numero;
+    private int numero;
     private String localidad;
     private String provincia;
 
     @OneToOne(mappedBy = "domicilio")
+    @JsonIgnore
     private Paciente paciente;
 
     public Domicilio() {
     }
 
-    public Domicilio(String calle, String numero, String localidad, String provincia, Paciente paciente) {
+    public Domicilio(String calle, int numero, String localidad, String provincia) {
         this.calle = calle;
         this.numero = numero;
         this.localidad = localidad;
         this.provincia = provincia;
-        this.paciente = paciente;
     }
 
-    public Domicilio(Integer id, String calle, String numero, String localidad, String provincia, Paciente paciente) {
+    public Domicilio(Integer id, String calle, int numero, String localidad, String provincia, Paciente paciente) {
         this.id = id;
         this.calle = calle;
         this.numero = numero;
@@ -55,11 +56,11 @@ public class Domicilio {
         this.calle = calle;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 

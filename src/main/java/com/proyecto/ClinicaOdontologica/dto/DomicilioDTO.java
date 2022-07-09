@@ -7,6 +7,9 @@ public class DomicilioDTO {
     private String localidad;
     private String provincia;
 
+    public DomicilioDTO() {
+    }
+
     public Integer getId() {
         return id;
     }

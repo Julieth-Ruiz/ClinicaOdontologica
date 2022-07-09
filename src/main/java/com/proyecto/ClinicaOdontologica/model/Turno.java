@@ -1,5 +1,7 @@
 package com.proyecto.ClinicaOdontologica.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -9,14 +11,16 @@ import java.time.LocalDateTime;
 public class Turno {
 
     @Id
-    @GeneratedValue (strategy=GenerationType.AUTO)
+    @GeneratedValue (strategy=GenerationType.SEQUENCE)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 
     @ManyToOne(fetch = FetchType.EAGER)
+    @JsonIgnore
     @JoinColumn(name = "odontologo_id")
     private Odontologo odontologo;
 
