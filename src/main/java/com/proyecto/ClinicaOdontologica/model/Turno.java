@@ -1,6 +1,7 @@
 package com.proyecto.ClinicaOdontologica.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -14,14 +15,14 @@ public class Turno {
     @GeneratedValue (strategy=GenerationType.SEQUENCE)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JsonIgnore
-    @JoinColumn(name = "paciente_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name= "paciente_id", nullable = false)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Paciente paciente;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JsonIgnore
-    @JoinColumn(name = "odontologo_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name= "odontologo_id", nullable = false)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Odontologo odontologo;
 
     private LocalDateTime fechaHora;

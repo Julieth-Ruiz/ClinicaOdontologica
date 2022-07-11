@@ -9,7 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/turnos")
@@ -40,8 +42,9 @@ public class TurnoController {
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
-
-
-
+    @GetMapping
+    public Collection<TurnoDTO> listarTurnos(){
+        return turnoService.listar();
+    }
 
 }

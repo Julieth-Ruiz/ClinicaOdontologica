@@ -6,26 +6,30 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/js/post_paciente.js"></script>
-    <script type="text/javascript" src="/js/get_paciente.js"></script>
-    <script type="text/javascript" src="/js/put _paciente.js"></script>
-    <script type="text/javascript" src="/js/delete_paciente.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/post_paciente.js"></script>
     <title> </title>
 </head>
 <style>
-body {
-  padding-top: 5rem;
-}
-.starter-template {
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
+    body {
+        padding-top: 5rem;
+    }
+    .starter-template {
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
 </style>
+
+<script>
+    $(document).ready(function() {
+        $("#exampleModal").modal();
+    });
+</script>
 
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div id="response"></div>
     <a class="navbar-brand" href="#">Clinica Odontologica</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,26 +61,58 @@ body {
         <p class="lead"> Puedes listar, crear, modificar o eliminar un paciente.</p>
     </div>
 
-    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ventanaModal">Registrar Paciente </button>
-
-    <div class="modal" id="ventanModal">
-        <div class="modal-dialog">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Registrar Paciente
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel">Crear Paciente</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                    <form id="add_new_pacient">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Ingrese nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Apellido</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Ingrese apellido">
+                        </div>
+                        <div class="form-group">
+                            <label for="dni">DNI</label>
+                            <input type="text" class="form-control" id="dni" placeholder="Ingrese dni">
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Fecha de Alta</label>
+                            <input type="text" class="form-control" id="date" placeholder="Ingrese fecha de alta">
+                        </div>
+                        <div class="form-group">
+                            <strong><label for="calle">Dirección:</label></strong>
+                            <label for="calle">Fecha de Alta</label>
+                            <input type="text" class="form-control" id="calle" placeholder="Ingrese la calle">
+                            <label for="numero">Numero</label>
+                            <input type="text" class="form-control" id="numero" placeholder="Ingrese el numero">
+                            <label for="localidad">Localidad</label>
+                            <input type="text" class="form-control" id="localidad" placeholder="Ingrese la localidad">
+                            <label for="provincia">Provincia</label>
+                            <input type="text" class="form-control" id="provincia" placeholder="Ingrese la provincia">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary" id="btn_add_new_pacient">Guardar Paciente</button>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
-
 
     <table class="table align-middle mb-0 bg-white">
         <thead class="bg-light">
@@ -122,11 +158,13 @@ body {
 
             </td>
             <td>
-                <button type="button" class="btn btn-warning">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Editar
                 </button>
 
-                <button type="button" class="btn btn-danger">
+
+
+                <button type="button" class="btn btn-danger" >
                     Eliminar
                 </button>
 
@@ -137,8 +175,7 @@ body {
     </table>
 
 </main>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

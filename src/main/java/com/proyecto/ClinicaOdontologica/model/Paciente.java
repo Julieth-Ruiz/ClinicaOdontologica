@@ -25,9 +25,9 @@ public class Paciente {
     private Integer dni;
     private Date fechaAlta;
 
-    @OneToMany(mappedBy ="paciente" )
+    @OneToMany (mappedBy = "paciente", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnore
-    private Set<Turno> Turnos;
+    private Set<Turno> turnos = new HashSet<>();
 
     public Paciente() {
     }
@@ -48,7 +48,7 @@ public class Paciente {
         this.domicilio = domicilio;
         this.dni = dni;
         this.fechaAlta = fechaAlta;
-        Turnos = turnos;
+        this.turnos = turnos;
     }
 
     public Integer getId() {
@@ -100,10 +100,10 @@ public class Paciente {
     }
 
     public Set<Turno> getTurnos() {
-        return Turnos;
+        return this.turnos;
     }
 
     public void setTurnos(Set<Turno> turnos) {
-        Turnos = turnos;
+        this.turnos = turnos;
     }
 }

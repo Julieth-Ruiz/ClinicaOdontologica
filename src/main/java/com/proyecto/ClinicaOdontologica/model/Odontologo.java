@@ -17,9 +17,9 @@ public class Odontologo {
     private String apellido;
     private Long matricula;
 
-    @OneToMany(mappedBy ="odontologo", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonIgnore
-    private Set<Turno> Turnos = new HashSet<>();
+    private Set<Turno> turnos = new HashSet<>();
 
     public Odontologo() {
     }
@@ -28,7 +28,7 @@ public class Odontologo {
         this.nombre = nombre;
         this.apellido = apellido;
         this.matricula = matricula;
-        Turnos = turnos;
+        this.turnos = turnos;
     }
 
     public Odontologo(String nombre, String apellido, Long matricula) {
@@ -70,10 +70,10 @@ public class Odontologo {
     }
 
     public Set<Turno> getTurnos() {
-        return Turnos;
+        return this.turnos;
     }
 
     public void setTurnos(Set<Turno> turnos) {
-        Turnos = turnos;
+        this.turnos = turnos;
     }
 }
