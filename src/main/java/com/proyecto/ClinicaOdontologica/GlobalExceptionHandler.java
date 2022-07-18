@@ -1,5 +1,6 @@
 package com.proyecto.ClinicaOdontologica;
 
+import com.proyecto.ClinicaOdontologica.exception.ResourceNotFoundException;
 import org.apache.log4j.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,5 +19,13 @@ public class GlobalExceptionHandler {
     {
         logger.error(ex.getMessage());
         return new ResponseEntity("Error" + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<?> procesarErrores(Exception ex, WebRequest req)
+    {
+        logger.error(ex.getMessage());
+        return new ResponseEntity("Error" + ex.getMessage(), HttpStatus.NOT_FOUND);
     }
 }

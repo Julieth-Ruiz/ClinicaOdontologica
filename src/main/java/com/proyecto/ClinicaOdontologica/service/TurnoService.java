@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyecto.ClinicaOdontologica.dto.TurnoDTO;
 import com.proyecto.ClinicaOdontologica.model.Turno;
 import com.proyecto.ClinicaOdontologica.repository.ITurnoRepository;
+import org.apache.log4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,8 @@ import java.util.Set;
 
 @Service
 public class TurnoService implements ITurnoService {
+
+    public static final Logger logger = Logger.getLogger(PacienteService.class);
     @Autowired
     private ITurnoRepository turnoRepository;
 
@@ -22,6 +25,7 @@ public class TurnoService implements ITurnoService {
     @Override
     public void agregar(Turno turno) {
         turnoRepository.save(turno);
+        logger.info("turno creado");
     }
 
     @Override

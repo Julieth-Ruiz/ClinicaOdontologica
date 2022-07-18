@@ -1,18 +1,20 @@
 package com.proyecto.ClinicaOdontologica.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proyecto.ClinicaOdontologica.model.Paciente;
 import com.proyecto.ClinicaOdontologica.repository.IPacienteRepository;
+import org.apache.log4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 import java.util.List;
-import java.util.Set;
+
 
 @Service
 
 public class PacienteService implements IPacienteService {
+
+    public static final Logger logger = Logger.getLogger(PacienteService.class);
     @Autowired
     private IPacienteRepository pacienteRepository;
 
@@ -20,6 +22,7 @@ public class PacienteService implements IPacienteService {
     @Override
     public void agregar(Paciente paciente) {
          pacienteRepository.save(paciente);
+         logger.info("paciente creado");
     }
 
     @Override

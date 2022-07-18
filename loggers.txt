@@ -1,2 +1,34 @@
-[2022-07-09 11:39:32] [ ERROR] [GlobalExceptionHandler:19] Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "p"
-[2022-07-09 11:42:54] [ ERROR] [GlobalExceptionHandler:19] Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "1t"
+[2022-07-11 11:11:59] [ ERROR] [GlobalExceptionHandler:20] Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "5t"
+[2022-07-11 11:29:14] [ DEBUG] [PacienteService:26] paciente creado
+[2022-07-11 11:33:32] [ INFO ] [OdontologoService:27] odontologo creado
+[2022-07-11 11:35:12] [ INFO ] [PacienteService:28] turno creado
+[2022-07-11 11:35:37] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 13:42:20] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 13:44:56] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 13:44:58] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 13:44:59] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 13:44:59] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 13:44:59] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 15:21:02] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 15:21:32] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 15:29:58] [ INFO ] [PacienteService:25] paciente creado
+[2022-07-11 15:33:26] [ INFO ] [PacienteService:28] turno creado
+[2022-07-11 15:33:36] [ ERROR] [GlobalExceptionHandler:20] could not execute statement; SQL [n/a]; constraint [FKQTJ6T7MULC2JMFKV92X4CTKWH]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+[2022-07-11 17:23:20] [ INFO ] [OdontologoService:27] odontologo creado
+[2022-07-11 17:49:39] [ ERROR] [GlobalExceptionHandler:20] not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo
+[2022-07-11 17:50:50] [ ERROR] [GlobalExceptionHandler:20] could not execute statement; SQL [n/a]; constraint [FKQTJ6T7MULC2JMFKV92X4CTKWH]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+[2022-07-11 17:52:09] [ ERROR] [GlobalExceptionHandler:20] not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo
+[2022-07-11 17:52:51] [ ERROR] [GlobalExceptionHandler:20] not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo
+[2022-07-11 18:01:42] [ ERROR] [GlobalExceptionHandler:20] not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo
+[2022-07-11 18:02:21] [ ERROR] [GlobalExceptionHandler:20] not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo
+[2022-07-11 18:03:29] [ ERROR] [GlobalExceptionHandler:20] not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo
+[2022-07-11 18:05:19] [ ERROR] [GlobalExceptionHandler:20] not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo
+[2022-07-11 18:05:37] [ ERROR] [GlobalExceptionHandler:20] not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo
+[2022-07-11 18:06:18] [ ERROR] [GlobalExceptionHandler:20] not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo; nested exception is org.hibernate.PropertyValueException: not-null property references a null or transient value : com.proyecto.ClinicaOdontologica.model.Turno.odontologo
+[2022-07-11 18:12:20] [ ERROR] [GlobalExceptionHandler:20] org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.proyecto.ClinicaOdontologica.model.Turno.odontologo -> com.proyecto.ClinicaOdontologica.model.Odontologo; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.proyecto.ClinicaOdontologica.model.Turno.odontologo -> com.proyecto.ClinicaOdontologica.model.Odontologo
+[2022-07-11 18:12:44] [ ERROR] [GlobalExceptionHandler:20] org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.proyecto.ClinicaOdontologica.model.Turno.paciente -> com.proyecto.ClinicaOdontologica.model.Paciente; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: Not-null property references a transient value - transient instance must be saved before current operation : com.proyecto.ClinicaOdontologica.model.Turno.paciente -> com.proyecto.ClinicaOdontologica.model.Paciente
+[2022-07-11 18:15:08] [ ERROR] [GlobalExceptionHandler:20] could not execute statement; SQL [n/a]; constraint [FK4OKCQR9IQT2IW6XHY1PPSMO3L]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+[2022-07-11 18:15:19] [ INFO ] [PacienteService:28] turno creado
+[2022-07-11 18:34:16] [ INFO ] [PacienteService:28] turno creado
+[2022-07-11 18:38:48] [ INFO ] [PacienteService:28] turno creado
+[2022-07-11 18:40:05] [ INFO ] [PacienteService:28] turno creado

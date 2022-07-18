@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./js/post_paciente.js"></script>
+    <script type="text/javascript" src="./js/get_paciente.js"></script>
     <title> </title>
 </head>
 <style>
@@ -38,16 +39,16 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Inicio <span class="sr-only"></span></a>
+                <a class="nav-link" href="./index.html">Inicio <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Odontologos</a>
+                <a class="nav-link" href="./odontologo.html">Odontologos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Pacientes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Turnos</a>
+                <a class="nav-link" href="./turno.html">Turnos</a>
             </li>
         </ul>
     </div>
@@ -94,8 +95,7 @@
                             <input type="text" class="form-control" id="date" placeholder="Ingrese fecha de alta">
                         </div>
                         <div class="form-group">
-                            <strong><label for="calle">Dirección:</label></strong>
-                            <label for="calle">Fecha de Alta</label>
+                            <label for="calle">Dirección:</label>
                             <input type="text" class="form-control" id="calle" placeholder="Ingrese la calle">
                             <label for="numero">Numero</label>
                             <input type="text" class="form-control" id="numero" placeholder="Ingrese el numero">
@@ -114,7 +114,7 @@
         </div>
     </div>
 
-    <table class="table align-middle mb-0 bg-white">
+    <table id="paciente_table" class="table align-middle mb-0 bg-white">
         <thead class="bg-light">
         <tr>
             <th>Id</th>
@@ -123,52 +123,10 @@
             <th>Domicilio</th>
             <th>Dni</th>
             <th>Fecha de Alta</th>
-            <th>Turno</th>
             <th> </th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>
-                <i class="fas fa-user-circle"></i>
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-user-circle"></i>
-
-                    <div class="ms-3">
-                        <p class="fw-bold mb-1"></p>
-                        <p class="text-muted mb-0"></p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <p class="fw-normal mb-1"></p>
-                <p class="text-muted mb-0"></p>
-            </td>
-            <td>
-                <span class="badge badge-success rounded-pill d-inline">Active</span>
-            </td>
-            <td></td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-
-            </td>
-            <td>
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Editar
-                </button>
-
-
-
-                <button type="button" class="btn btn-danger" >
-                    Eliminar
-                </button>
-
-            </td>
 
 
         </tbody>

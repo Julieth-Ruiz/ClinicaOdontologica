@@ -9,18 +9,12 @@ window.addEventListener('load', function() {
         const formData = {
             nombre: document.querySelector('#name').value,
             apellido: document.querySelector('#lastName').value,
-            dni: document.querySelector('#dni').value,
-            fechaAlta: document.querySelector('#date').value,
-            domicilio: {
-                calle: document.querySelector('#calle').value,
-                numero: document.querySelector('#numero').value,
-                localidad: document.querySelector('#localidad').value,
-                provincia: document.querySelector('#provincia').value,
-            },
+            matricula: document.querySelector('#matricula').value,
+
         }
 
 
-        const url = '/pacientes';
+        const url = '/odontologos';
         const settings = {
             method: 'POST',
             headers:{
@@ -59,12 +53,7 @@ window.addEventListener('load', function() {
     function resetUploadForm(){
         document.querySelector('#name').value = "";
         document.querySelector('#lastName').value = "";
-        document.querySelector('#dni').value = "";
-        document.querySelector('#date').value = "";
-        document.querySelector('#calle').value = "";
-        document.querySelector('#numero').value = "";
-        document.querySelector('#localidad').value = "";
-        document.querySelector('#provincia').value = "";
+        document.querySelector('#matricula').value = "";
     }
 
 });

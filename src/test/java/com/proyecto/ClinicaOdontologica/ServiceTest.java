@@ -6,7 +6,6 @@ import com.proyecto.ClinicaOdontologica.model.Odontologo;
 import com.proyecto.ClinicaOdontologica.model.Paciente;
 import com.proyecto.ClinicaOdontologica.service.IOdontologoService;
 import com.proyecto.ClinicaOdontologica.service.IPacienteService;
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
